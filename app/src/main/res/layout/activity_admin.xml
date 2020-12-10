@@ -58,13 +58,12 @@
                     android:textColorHint="@color/colorAzul"
                     android:textColor="@color/colorAzul"
                     android:textColorLink="@color/colorAzul"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:gravity="center_horizontal"
                     android:inputType="textEmailAddress"
                     android:theme="@color/colorBoton1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -82,7 +81,7 @@
                     android:textColorHint="@color/colorAzul"
                     android:textColor="@color/colorAzul"
                     android:textColorLink="@color/colorAzul"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:gravity="center_horizontal"
                     android:inputType="textPassword"
                     android:theme="@color/colorBoton1"
@@ -95,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorBoton1"
-                android:text="Iniciar Sesion"
+                android:text="Iniciar sesión"
                 android:textColor="#ffff"
                 android:textStyle="bold"
                 android:layout_marginRight="10dp"
