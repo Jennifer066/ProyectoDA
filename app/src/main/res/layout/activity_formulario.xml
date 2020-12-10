@@ -1,9 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
     tools:context="com.example.jennifergarcia.proyectoda.FormularioActivity">
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:fadingEdge="horizontal|vertical"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="1dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorAzul"
+                android:text="Llena el siguiente formulario"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginRight="15dp"
+                android:textSize="20dp">
+            </TextView>
+                <Button
+                    android:id="@+id/botton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBoton2"
+                    android:text="Generar ubicación"
+                    android:textColor="@color/colorAzul"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerHorizontal="true" />
 
-</android.support.constraint.ConstraintLayout>
+            <EditText
+                android:id="@+id/txtLat"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:ems="10"
+                android:visibility="invisible"
+                android:textAlignment="center"
+                android:focusable="false"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"/>
+            <EditText
+                android:id="@+id/txtLon"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:ems="10"
+                android:visibility="invisible"
+                android:textAlignment="center"
+                android:focusable="false"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAzul"
+                android:text="Ingresa tu nombre"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:textAlignment="center"/>
+            <EditText
+                android:id="@+id/txtAp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textStyle="bold"
+                android:textColor="@color/colorAzul"
+                android:visibility="invisible"
+                android:textAlignment="center"
+                android:focusable="false"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"/>
+            <Button
+                android:id="@+id/btnEnviar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBoton2"
+                android:text="Enviar"
+                android:textColor="@color/colorAzul"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+   </android.support.v7.widget.CardView>
+</android.support.v4.widget.NestedScrollView>
