@@ -3,7 +3,7 @@
     package="com.example.jennifergarcia.proyectoda">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -23,7 +23,8 @@
         <activity android:name=".FormularioActivity" />
         <activity android:name=".AdminActivity" />
         <activity android:name=".InformacionActivity" />
-        <activity android:name=".RecuperarActivity"></activity>
+        <activity android:name=".RecuperarActivity" />
+        <activity android:name=".MenuAdminActivity"></activity>
     </application>
 
 </manifest>

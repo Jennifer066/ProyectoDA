@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "799371992066",
+    "firebase_url": "https://proyectoda-cad13-default-rtdb.firebaseio.com",
+    "project_id": "proyectoda-cad13",
+    "storage_bucket": "proyectoda-cad13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799371992066:android:90554b913ad4fc4ac91b1b",
+        "android_client_info": {
+          "package_name": "com.example.jennifergarcia.proyectoda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799371992066-o4khr683iohttrf290d5mrdotq9o7bto.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jennifergarcia.proyectoda",
+            "certificate_hash": "5333c3471ce22d660055f3253330471d824e4abe"
+          }
+        },
+        {
+          "client_id": "799371992066-cfs65kft1b8krcqhb9ghp1j1qvir2vcu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcs0pEZtomB_hTuyZAMNYUBYNGykPMLCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799371992066-cfs65kft1b8krcqhb9ghp1j1qvir2vcu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

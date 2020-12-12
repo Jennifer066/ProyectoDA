@@ -2,6 +2,8 @@ package com.example.jennifergarcia.proyectoda;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
@@ -19,9 +21,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class FormularioActivity extends AppCompatActivity {
-    Button consultarLatLong;
-    EditText edtLat, edtLong;
+    DatabaseReference databaseReference;
+    Button consultarLatLong, btnGuardar;
+    EditText edtLat, edtLong, edtnombre, edtdesc;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +37,54 @@ public class FormularioActivity extends AppCompatActivity {
         /* Agregar en cada codigo de Java la línea de abajo para centrar el nombre de la app titulo centrado action bar*/
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.txt_titulo);
-
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        btnGuardar = (Button) findViewById(R.id.btnEnviar);
         consultarLatLong = (Button) findViewById(R.id.botton);
         edtLat = (EditText) findViewById(R.id.txtLat);
         edtLong = (EditText) findViewById(R.id.txtLon);
+        edtnombre = (EditText) findViewById(R.id.txtNo);
+        edtdesc = (EditText) findViewById(R.id.txtDes);
         getLocalizacion();
+        getCargarLocalizacion();
+        guardarDatos();
 
     }
+    public void guardarDatos(){
+        btnGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String latitud = edtLat.getText().toString().trim();
+                String logitud = edtLong.getText().toString().trim();
+                String nombre = edtnombre.getText().toString().trim();
+                String descripcion = edtdesc.getText().toString().trim();
+
+                if(TextUtils.isEmpty(latitud)){
+                    Toast.makeText(getApplicationContext(), "Por favor pulsa el botón de generar ubicación",
+                            Toast.LENGTH_LONG).show();
+                }else if(TextUtils.isEmpty(logitud)){
+                    Toast.makeText(getApplicationContext(), "Por favor pulsa el botón de generar ubicación",
+                            Toast.LENGTH_LONG).show();
+                }else if(TextUtils.isEmpty(nombre)){
+                    Toast.makeText(getApplicationContext(), "Por favor ingresa el nombre completo",
+                            Toast.LENGTH_LONG).show();
+                }else if(TextUtils.isEmpty(descripcion)){
+                    Toast.makeText(getApplicationContext(), "Por favor ingresar una descripción del lugar",
+                            Toast.LENGTH_LONG).show();
+                }else{
+                    Formrespuestas formrespuestas = new Formrespuestas(Double.valueOf(latitud),Double.valueOf(logitud), nombre, descripcion);
+
+                    databaseReference.child("Respuestas").child(nombre).setValue(formrespuestas);
+                    Toast.makeText(getApplicationContext(), "Datos enviados correctamente",
+                            Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(FormularioActivity.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+
+            }
+        });
+    }
+
     private void getCargarLocalizacion() {
         consultarLatLong.setOnClickListener(new View.OnClickListener() {
             @Override
